@@ -1,0 +1,99 @@
+
+.book-call {
+  padding: 80px 20px;
+  background: 
+    linear-gradient(135deg, rgba(62, 166, 76, 0.1) 0%, transparent 100%),
+    radial-gradient(circle at center, rgba(67, 198, 172, 0.1) 0%, transparent 70%);
+}
+
+.book-call-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.book-call-content {
+  padding: 60px 50px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.book-call-content::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle, rgba(62, 166, 76, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 30%, rgba(67, 198, 172, 0.05) 0%, transparent 50%);
+  animation: rotate 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.book-call-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #ffffff 0%, #3EA64C 50%, #43C6AC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  z-index: 2;
+}
+
+.book-call-content p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.book-call-btn {
+  font-size: 1.1rem;
+  padding: 18px 36px;
+  position: relative;
+  z-index: 2;
+}
+
+.book-call-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 15px 40px rgba(62, 166, 76, 0.4),
+    0 0 30px rgba(62, 166, 76, 0.3);
+}
+
+@media (max-width: 768px) {
+  .book-call {
+    padding: 60px 20px;
+  }
+  
+  .book-call-content {
+    padding: 40px 30px;
+  }
+  
+  .book-call-content h2 {
+    font-size: 2rem;
+  }
+  
+  .book-call-content p {
+    font-size: 1.1rem;
+  }
+  
+  .book-call-btn {
+    padding: 16px 32px;
+    font-size: 1rem;
+  }
+}

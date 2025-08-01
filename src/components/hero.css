@@ -1,0 +1,295 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 20px 80px;
+  position: relative;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-content {
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, #ffffff 0%, #3EA64C 40%, #73FFD1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.hero-visual {
+  position: relative;
+  z-index: 1;
+}
+
+.code-editor {
+  background: #2D2A2E;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(62, 166, 76, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  max-height: 458px;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(62, 166, 76, 0.1),
+    0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  font-family: 'Fira Code', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+}
+
+.code-editor:hover {
+  box-shadow: 
+    0 30px 80px rgba(0, 0, 0, 0.6),
+    0 0 60px rgba(62, 166, 76, 0.2),
+    0 12px 40px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
+  border-color: rgba(115, 255, 209, 0.3);
+}
+
+.editor-header {
+  background: rgba(45, 42, 46, 0.95);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.editor-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.control.close {
+  background: #FF5F57;
+}
+
+.control.minimize {
+  background: #FFBD2E;
+}
+
+.control.maximize {
+  background: #28CA42;
+}
+
+.control:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.editor-tabs {
+  display: flex;
+  gap: 4px;
+}
+
+.tab {
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.2s ease;
+}
+
+.tab.active {
+  background: rgba(62, 166, 76, 0.2);
+  color: #FCFCFA;
+  border: 1px solid rgba(62, 166, 76, 0.3);
+}
+
+.tab:not(.active):hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.editor-content {
+  display: flex;
+  padding: 20px 0;
+  font-size: 14px;
+  line-height: 1.6;
+  background: #2D2A2E;
+  height: 380px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar Styling */
+.editor-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.editor-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.editor-content::-webkit-scrollbar-thumb {
+  background: rgba(62, 166, 76, 0.3);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.editor-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(62, 166, 76, 0.5);
+  box-shadow: 0 0 8px rgba(62, 166, 76, 0.3);
+}
+
+/* Firefox scrollbar */
+.editor-content {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(62, 166, 76, 0.3) rgba(255, 255, 255, 0.05);
+}
+
+.line-numbers {
+  padding: 0 20px;
+  color: #727072;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  min-width: 50px;
+  text-align: right;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.code-content {
+  flex: 1;
+  padding-right: 20px;
+  min-width: 0;
+}
+
+.code-content pre {
+  margin: 0;
+  color: #FCFCFA;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.code-content code {
+  color: #FCFCFA;
+}
+
+/* Monokai Pro Syntax Highlighting */
+.keyword {
+  color: #FF6188;
+  font-weight: 600;
+}
+
+.method {
+  color: #FFD866;
+}
+
+.string {
+  color: #A9DC76;
+}
+
+.variable {
+  color: #FC9867;
+}
+
+.comment {
+  color: #727072;
+  font-style: italic;
+}
+
+.cursor {
+  color: #3EA64C;
+  animation: blink 1s infinite;
+  font-weight: bold;
+}
+
+.cursor.visible {
+  opacity: 1;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .hero-cta {
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .code-editor {
+    max-width: 100%;
+    max-height: 400px;
+  }
+  
+  .editor-content {
+    font-size: 12px;
+    height: 320px;
+    padding: 15px 0;
+  }
+  
+  .editor-header {
+    padding: 8px 15px;
+  }
+  
+  .editor-tabs {
+    display: none;
+  }
+  
+  .line-numbers {
+    padding: 0 15px;
+    margin-right: 15px;
+  }
+  
+  .code-content {
+    padding-right: 15px;
+  }
+}
