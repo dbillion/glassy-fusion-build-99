@@ -39,6 +39,15 @@ const Footer = () => {
           
           <div className="footer-section">
             <h4>Services</h4>
+               <div className="social-links">
+              <a href="#" className="social-link">Web Development</a>
+              <a href="#" className="social-link">E-commerce</a>
+              <a href="#" className="social-link">UI/UX Design</a>
+              <a href="#" className="social-link">Branding</a>
+              <a href="#" className="social-link">SEO Optimization</a>
+            </div>
+
+
             <ul>
               <li>Web Development</li>
               <li>E-commerce</li>

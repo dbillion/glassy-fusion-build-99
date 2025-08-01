@@ -129,7 +129,7 @@ const Contact = () => {
             <HiLocationMarker className="contact-icon" />
             <div>
               <h4>Location</h4>
-              <p>San Francisco, CA</p>
+              <p>Tallinn, Estonia</p>
             </div>
           </div>
         </div>
